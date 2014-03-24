@@ -1,0 +1,88 @@
+<!doctype html>
+<head>
+	<meta charset="UTF-8">
+	<title>Library on Handlebars</title>
+	<link rel="stylesheet" href="bootstrap.min.css">
+</head>
+<body>
+	<style>h1{text-align: center;}</style>
+
+	<section class="container">
+	
+		<h1 >Library</h1>
+		<h1>{{ On Handlebars }}</h1>
+
+
+		
+		<h2>Currently Reading:</h2>
+		<div id="book-content"></div>
+		
+		<script id="book-template" type="text/x-handlebars-template">
+			<h3>{{book}}</h3>
+			<p>Author: {{author}}</p>
+			<p>Genre: {{genre}}</p>
+		</script>
+
+
+		
+		<h2>Users</h2>
+		<div id="content-placeholder"></div>
+		<script id="users-template" type="text/x-handlebars-template">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th>Username</th>
+					<th>Fullname</th>
+					<th>Email</th>
+				</thead>
+				<tbody>
+					{{#each users}}
+					<tr>
+						<td>{{username}}</td>
+						<td>{{fullName}}</td>
+						<td>{{email}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</script>
+
+
+
+	
+		<h2>Books</h2>
+		<div id="json-content"></div>
+		<script id="json-template" type="text/x-handlebars-template">
+			<table class="table table-bordered table-hover">
+				<thead>
+					<th>Image</th>
+					<th>Book</th>
+					<th>Author</th>
+					<th>Genre</th>
+				</thead>
+				<tbody>
+					{{#books}}
+					<tr>
+						<td>
+							{{#if this.image}}
+								<img src={{image}} width="100px"/>
+							{{else}}
+								No Image Available 
+							{{/if}}
+						</td>
+						<td>{{book}}</td>
+						<td>{{author}}</td>
+						<td>{{genre}}</td>
+					</tr>
+					{{/books}}
+				</tbody>
+			</table>
+		</script>
+
+
+	</section>
+	
+	<script src="jquery-1.11.0.min.js"></script>
+	<script src="handlebars-v1.3.0.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>

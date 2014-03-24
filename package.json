@@ -1,0 +1,8 @@
+{
+  "name": "sneaker_bistro",
+  "description": "A simple sneaker store running on Handlebars.js", 
+  "version": "0.1.0",
+  "dependencies" : {
+    "connect": "latest"
+  }
+}
